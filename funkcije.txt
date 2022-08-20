@@ -1,0 +1,71 @@
+Objašnjenje
+-U ovoj datoteci možemo vidjeti obajšnjenje pretraga i rada funkcija te potrebno vrijeme za njihovo izvršavanje.
+-Koristili smo Chrono library za mjerenje (u sekundama ) koliko je potrebno vremena da se izvrši zadati zadatak
+pozivom funkcije.
+-Svaka funkcija će biti opisana (njena svrha , razlog postojanja funkcije itd).
+-Ispod navedene funkcije isto tako će biti upisani i rezultati koje funkcija vraća te vrijeme potrebno da se program
+compil-a od poziva navedene funkcije.
+-U vektor su uneseni podaci adresa , godina ,label i income. 
+-Testirao sam unos svih podataka iz csva u vektor i potrebno je znatno više vremena za kompajliranje i operacije tako da sam uzeo samo 4
+vrijednosti.
+
+-void izracuniaj(vector <podaci> baza) {
+.jednostavna funkcija koja nam pozivom ispisuje koliko napada se dogodilo u unesenoj godini
+.s jednostavnom petljom smo prošli kroz vektor<baza> gdje su pohranjeni naši podaci.
+.ralzog izrade ove funkcije je bio prikaz potrebnog vremena za pronalaženje napada u određenoj godini pomoću jednostavne petlje
+bez korištenja već ugrađenih funkcija i vremena potrebnog za pronalazak određenog podatka
+Vrijeme potrebno za pretragu : 0.520239s
+}
+
+-int izracunajSTL (vector <podaci> baza) {
+.jednostavana ugrađena STL funkcija koju smo koristili za pronalazak godine zanjeg napada
+.unosom imena vektora i korištenjem 2 var tipa podaci smo uspoređivali vrijednosti
+.Vrijeme potrebno za pretragu : 0.531258s
+
+-void UMpretrazivanje(vector <podaci> baza) {
+.u ovoj funkciji testirali smo rad s Unordered map-om.
+.koristili smo petlju kako bi pohranili i pronašli željeni rezultat u/iz unordered mape.
+.broj i-a pokazuje gdje se nalazi vrijednost koju tražimo , počevši od 0 (iz nekog razloga u mapu je povukao i prvi red (adresa,godina itd).
+.funkcija je testirana adresom koja se nalazi na broju 10--> u pravilu 8 
+.VRIJEME POTREBNO ZA PRONALAZAK PODATKA JE  2.12925s
+}
+
+-void UMpretrazivanjaGodine(vector <podaci> baza,int broj) {
+.ova funkcija preko parametara bazu podataka i jedan broj ( godinu)
+.pomoću petlje prolazimo kroz bazu podataka i s if naredbom uspoređujemo broj iz parametra s brojevima iz baze podataka
+.u ovom slučaju koristili smo multimap iz razloga zato što smo godinu koristili kao ključ a adresu kao vrijednost i potrebna 
+nam je mapa koja može imati ključeve istih vrijednosti.U multimap smo pohranili godine i adrese.
+. funkcija pronadiAdresu prima jedan string i bazu podataka. Ona služi čisto za provjeru prethodne funkcije i dokazuje
+da su pohranjene pravilne vrijednosti.Ispisuje godinu , adresu i label.
+.Vrijeme potrebno za pronalazak dobivenih podataka : 0.685391s
+.u funkciji je zakomentiran ispis kao dokaz
+}
+
+-struct sortiranjePoGodini , struct sortiranjePoVrijednosti {
+.2 jednostavne strukture za sortiranje vektora tipa podaci
+.podaci koji su sortirani su godina i income
+.Vrijeme potrebno za sortiranje  podatka po godini : 2.38333s
+.Vrijeme potrebno za sortiranje  podatka po vrijednosti : 2.12881s
+
+-void izbrisiPoKljucu (int  key,vector <podaci> baza) {
+.ovdje smo koristili multimapu zato što nam je key godina a vrijednost adresa , -->ključevi imaju istu adresu
+.unosom key parametra izbrišu se svi ključevi koji su jednaki predanom parametru
+.u funkciji je zakomentiran ispis mape
+.Vrijeme potrebno za brisanje zadanih kljuceva : 2.16396s
+
+.quicksort / partition ne izbacuje vrijeme ? kopirao kod s interneta , testirao na obicnom vektoru tipa int i radi
+u projektu ne želi ispisati vrijednosti , vrijeme potrebno za izvrsavanje?
+
+
+
+void IzbrisiPoLabeluiGodini(vector <podaci> &baza , string label,int godina) {
+.prebacio vektor u funkciju preko adrese , prima str i int
+.petlja za prolazak kroz vektor ako je zadani parametar jednak labelu i int parametar godini izbrise ga iz vektora
+.Vrijeme potrebno za brisanje iz vec po godiin : 0.0328191s
+
+
+https://en.cppreference.com/w/cpp/container/vector/erase
+https://en.cppreference.com/w/cpp/algorithm/sort
+-date mi n kljuceva , vratite listu vrijednosti
+-pogledat opet kompleksnost malo proucit
+-kako rade strukture 
